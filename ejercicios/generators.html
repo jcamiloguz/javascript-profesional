@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="/ejercicios/">go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <script>
+      function* simpleGenerator() {
+        console.log('Generator Start')
+        yield 34
+        console.log('Generator End')
+      }
+      // const gen = simpleGenerator()
+
+      function* idMaker() {
+        let id = 1
+        while (true) {
+          yield id
+          id++
+        }
+      }
+      const idm = idMaker()
+
+      function* idMakerReset() {
+        let id = 1
+        let reset
+        while (true) {
+          reset = yield id
+          console.log(reset)
+          if (reset) {
+            id = 1
+          } else {
+            id++
+          }
+        }
+      }
+
+      function* fibonacci() {
+        let a = 1
+        let b = 1
+        while (true) {
+          const nextNumber = a + b
+          a = b
+          b = nextNumber
+          yield nextNumber
+        }
+      }
+      const fib = fibonacci()
+      const idmr = idMakerReset()
+    </script>
+  </body>
+</html>
