@@ -1,6 +1,7 @@
-import MediaPlayer from './mediaplayer'
-import Autoplay from './plugins/autoplay'
-import Autopause from './plugins/autopause'
+import MediaPlayer from '@jcamiloguz/mediaplayer'
+import Autoplay from '@jcamiloguz/mediaplayer/lib/plugins/autoplay'
+import Autopause from '@jcamiloguz/mediaplayer/lib/plugins/autopause'
+import Ads from '@jcamiloguz/mediaplayer/lib/plugins/Ads'
 
 
 const video = document.querySelector('video')
@@ -9,7 +10,8 @@ const bmute:HTMLElement = document.getElementById('b_mute')
 
 const player = new MediaPlayer({ el: video, plugins:[
    new Autoplay(),
-   new Autopause()
+   new Autopause(),
+   new Ads()
 ]})
 button.onclick = () => player.togglePlay()
 bmute.onclick = () => player.toggleMute()

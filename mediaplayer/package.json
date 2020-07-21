@@ -1,0 +1,16 @@
+{
+  "name": "@jcamiloguz/mediaplayer",
+  "version": "2.0.0",
+  "description": "A video media player with ads. Made in a Platzi Class",
+  "main": "lib/mediaplayer.js",
+  "scripts": {
+    "build": "tsc src/**/*.ts src/plugins/*.ts src/plugins/**/*ts --outDir lib ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Juan Camilo Guzman",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
